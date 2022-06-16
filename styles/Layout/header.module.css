@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  transform: translate();
+  align-items: center;
+  color: black;
+  z-index: 1000;
+  background-color: #e4ddf4;
+}
+
+.menuIcon {
+  margin-right: 15px;
+}
+
+.menuIcon :hover {
+  cursor: pointer;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  padding-left: 2%;
+  width: auto;
+}
+
+.right {
+  padding-right: 2%;
+  width: auto;
+}
