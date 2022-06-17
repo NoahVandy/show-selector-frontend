@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  background-color: #2e4f57;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.containerRight {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.loginTitleRow {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 70px;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  color: #2e4f57;
+  border-bottom: 1px solid #2e4f57;
+}
+
+.loginAction {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 70%;
+  background-color: red;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+.loginBtn {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+.loginBtn:hover {
+  background-color: grey;
+}
+.profileBtn {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+.profileBtn:hover {
+  background-color: grey;
+}
