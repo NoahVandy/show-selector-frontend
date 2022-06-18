@@ -1,0 +1,77 @@
+.containerLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.containerRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 700px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  background-color: #e4ddf4;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #4f1e10;
+  font-size: 48px;
+}
+
+.containerRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.loginTitleRow {
+  color: #4f1e10;
+  text-align: center;
+  width: 50%;
+  border-bottom: 1px solid #4f1e10;
+  font-size: 36px;
+}
+
+.loginActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  width: 75%;
+}
+
+.loginBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.registrationTitleRow {
+  color: #2e4f57;
+  text-align: center;
+  height: 60px;
+  width: 80%;
+  border-bottom: 1px solid #2e4f57;
+}

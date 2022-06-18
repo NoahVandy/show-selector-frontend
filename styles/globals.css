@@ -1,8 +1,14 @@
 html,
+nav,
 body {
   padding: 0;
   margin: 0;
   font-family: "Lacquer";
+}
+
+input,
+button {
+  font-family: "Lacquer" !important;
 }
 
 a {

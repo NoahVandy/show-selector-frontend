@@ -13,6 +13,15 @@
   margin-right: 15px;
 }
 
+.loginBtn {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+.loginBtn:hover {
+  background-color: grey;
+}
+
 .menuIcon :hover {
   cursor: pointer;
 }
