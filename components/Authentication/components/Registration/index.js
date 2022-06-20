@@ -39,6 +39,7 @@ export default function Registration({
             onChange={(text) => handleUsernameChange(text)}
           />
           <Input
+            type="password"
             placeholder="password."
             value={password}
             onChange={(text) => handlePasswordChange(text)}

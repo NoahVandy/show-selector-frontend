@@ -5,7 +5,7 @@ import Registration from "./components/Registration"
 
 import { validateEmail } from "../../helpers/strings/emailValidation"
 
-import { ADD_USER } from "../../graphQL/mutations"
+import { ADD_USER, LOGIN_USER } from "../../graphQL/mutations"
 
 import { useMutation } from "@apollo/client"
 
@@ -16,7 +16,8 @@ export default function Authentication() {
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
 
-  const [addUser, { error }] = useMutation(ADD_USER)
+  const [addUser] = useMutation(ADD_USER)
+  const [loginUser] = useMutation(LOGIN_USER)
 
   const handleUsernameChange = (text) => {
     setUsername(text)
@@ -30,7 +31,7 @@ export default function Authentication() {
     setEmail(text)
   }
 
-  const handleRegistrationSubmit = () => {
+  const handleRegistrationSubmit = async () => {
     const addUserResponse = {
       username: username,
       email: email,
@@ -41,7 +42,8 @@ export default function Authentication() {
       console.error("invalid email")
       return
     }
-
+    const { data } = await addUser({ variables: addUserResponse })
+    console.log(data)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)

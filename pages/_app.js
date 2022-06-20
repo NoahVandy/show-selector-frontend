@@ -8,12 +8,8 @@ import {
   createHttpLink,
 } from "@apollo/client"
 
-const httpLink = createHttpLink({
-  uri: "/graphql",
-})
-
 const client = new ApolloClient({
-  link: httpLink,
+  uri: "http://localhost:3001/graphQL",
   cache: new InMemoryCache(),
 })
 
