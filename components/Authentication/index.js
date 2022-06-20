@@ -3,6 +3,8 @@ import { useState } from "react"
 import Login from "./components/Login"
 import Registration from "./components/Registration"
 
+import { validateEmail } from "../../helpers/strings/emailValidation"
+
 export default function Authentication() {
   const [typeOpen, setTypeOpen] = useState("registration")
   const [email, setEmail] = useState("")
@@ -23,10 +25,12 @@ export default function Authentication() {
   }
 
   const handleRegistrationSubmit = () => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 2500)
+    if (validateEmail(email)) {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 2500)
+    }
   }
   const handleLoginSubmit = () => {
     setLoading(true)
