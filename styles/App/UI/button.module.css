@@ -1,0 +1,30 @@
+.button,
+.button:hover {
+  text-transform: lowercase;
+  background-color: #4f1e10;
+  font-size: 22px;
+  color: #e4ddf4;
+  width: 150px;
+  height: 45px;
+  padding: 10px;
+}
+
+.button:hover {
+  background-color: #e4ddf4;
+  color: #4f1e10;
+}
+
+.backButton,
+.backButton:hover {
+  text-transform: lowercase;
+  margin-top: 40px;
+  align-self: flex-start;
+  color: #4f1e10;
+  font-size: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.backButton:hover {
+  background-color: rgb(182, 182, 182);
+}

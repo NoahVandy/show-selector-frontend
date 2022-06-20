@@ -4,13 +4,25 @@
   height: 100px;
   transform: translate();
   align-items: center;
-  color: black;
+  color: #4f1e10;
   z-index: 1000;
   background-color: #e4ddf4;
 }
 
 .menuIcon {
   margin-right: 15px;
+}
+
+.navButton {
+  cursor: pointer;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.navButton:hover {
+  background-color: grey;
 }
 
 .menuIcon :hover {
@@ -25,11 +37,15 @@
   align-content: center;
   padding-left: 2%;
   width: auto;
+  font-size: 30px;
 }
 
 .right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   padding-right: 2%;
-  width: auto;
 }
 .modalContainer {
   position: "absolute";

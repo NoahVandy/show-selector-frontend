@@ -1,59 +1,52 @@
-import styles from "../../../../styles/Layout/header.module.css";
-import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import * as React from "react";
-import authStyles from "../../../../styles/Authentication/authentication.module.css";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import { Button } from "@mui/material";
+import { useState } from "react"
+
+import Link from "next/link"
+
+import styles from "../../../../styles/Layout/header.module.css"
+
+import MenuIcon from "@mui/icons-material/Menu"
+import Modal from "@mui/material/Modal"
+
+import Authentication from "../../../Authentication"
 
 const Header = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(false)
+  const handleClose = (e) => {
+    setOpen(false)
+  }
   return (
     <nav>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={(e) => handleClose(e)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className={authStyles.container}>
-          <div className={authStyles.containerLeft}>
-            <Typography variant="h3">college trade.</Typography>
-          </div>
-          <div className={authStyles.containerRight}>
-            <div className={authStyles.loginTitleRow}>
-              <Typography variant="h3">log in.</Typography>
-            </div>
-            <div className={authStyles.loginAction}>
-              <input />
-            </div>
-          </div>
-        </div>
+        <Authentication />
       </Modal>
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.menuIcon}>
+          {/* <div className={styles.menuIcon}>
             <MenuIcon />
-          </div>
-          <h1>ethan is stupid.</h1>
+          </div> */}
+          <h1>show selector.</h1>
         </div>
         <div className={styles.right}>
+          <Link href="/tvshows">
+            <p className={styles.navButton}>tv shows.</p>
+          </Link>
           <p
-            className={authStyles.loginBtn}
+            className={styles.navButton}
             onClickCapture={() => {
-              setOpen(true);
+              setOpen(true)
             }}
           >
-            login/signup
+            login.
           </p>
-          <Link href="/profile">Profile Page</Link>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

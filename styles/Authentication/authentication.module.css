@@ -1,4 +1,4 @@
-.container {
+.containerLogin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,62 +8,70 @@
   margin-top: 10%;
 }
 
+.containerRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 700px;
+  margin: auto;
+  margin-top: 5%;
+}
+
 .containerLeft {
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 100%;
-  background-color: #2e4f57;
+  background-color: #e4ddf4;
   align-content: center;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #4f1e10;
+  font-size: 48px;
 }
 
 .containerRight {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
   width: 50%;
   height: 100%;
   background-color: #fff;
 }
 
 .loginTitleRow {
-  display: flex;
-  flex-direction: row;
-  width: 400px;
-  height: 70px;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
-  color: #2e4f57;
-  border-bottom: 1px solid #2e4f57;
+  color: #4f1e10;
+  text-align: center;
+  width: 50%;
+  border-bottom: 1px solid #4f1e10;
+  font-size: 36px;
 }
 
-.loginAction {
+.loginActions {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  height: 70%;
-  background-color: red;
-  justify-content: center;
-  align-content: center;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  width: 75%;
 }
-.loginBtn {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
+
+.loginBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
-.loginBtn:hover {
-  background-color: grey;
-}
-.profileBtn {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-}
-.profileBtn:hover {
-  background-color: grey;
+
+.registrationTitleRow {
+  color: #4f1e10;
+  text-align: center;
+  width: 80%;
+  border-bottom: 1px solid #4f1e10;
+  font-size: 32px;
 }
