@@ -69,9 +69,9 @@
 }
 
 .registrationTitleRow {
-  color: #2e4f57;
+  color: #4f1e10;
   text-align: center;
-  height: 60px;
   width: 80%;
-  border-bottom: 1px solid #2e4f57;
+  border-bottom: 1px solid #4f1e10;
+  font-size: 32px;
 }

@@ -5,11 +5,25 @@ import styles from "../../../../styles/Authentication/authentication.module.css"
 import Input from "../../../UI/Input"
 import Button from "../../../UI/Button"
 
-const Login = ({ username, handleUsernameChange }) => {
+import { CircularProgress } from "@mui/material"
+
+const Login = ({
+  loading,
+  username,
+  password,
+  handleUsernameChange,
+  handlePasswordChange,
+  setTypeOpen,
+  submit,
+}) => {
   return (
     <div className={styles.containerLogin}>
       <div className={styles.containerLeft}>
-        <p variant="h3">show selector.</p>
+        <p>
+          show selector.
+          <br />
+          login.
+        </p>
       </div>
       <div className={styles.containerRight}>
         <div className={styles.loginTitleRow}>
@@ -21,11 +35,26 @@ const Login = ({ username, handleUsernameChange }) => {
             value={username}
             onChange={(text) => handleUsernameChange(text)}
           />
-          <Input placeholder="password." type="password" />
+          <Input
+            placeholder="password."
+            value={password}
+            onChange={(text) => handlePasswordChange(text)}
+            type="password"
+          />
         </div>
         <div className={styles.loginBottom}>
-          <Button>register.</Button>
-          <Button>login.</Button>
+          <Button onClick={() => setTypeOpen("register")}>sign up.</Button>
+          <Button onClick={() => submit()} disabled={loading}>
+            login.{" "}
+            {loading && (
+              <CircularProgress
+                size={22}
+                sx={{
+                  color: "#e4ddf4",
+                }}
+              />
+            )}
+          </Button>
         </div>
       </div>
     </div>
