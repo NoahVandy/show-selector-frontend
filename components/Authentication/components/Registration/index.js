@@ -1,9 +1,9 @@
-import styles from "../../../../styles/Authentication/authentication.module.css";
+import styles from "../../../../styles/Authentication/authentication.module.css"
 
-import Input from "../../../UI/Input";
-import Button from "../../../UI/Button";
+import Input from "../../../UI/Input"
+import Button from "../../../UI/Button"
 
-import { CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material"
 
 export default function Registration({
   loading,
@@ -60,5 +60,5 @@ export default function Registration({
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import Login from "./components/Login";
-import Registration from "./components/Registration";
+import Login from "./components/Login"
+import Registration from "./components/Registration"
 
 export default function Authentication() {
-  const [typeOpen, setTypeOpen] = useState("registration");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [typeOpen, setTypeOpen] = useState("registration")
+  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleUsernameChange = (text) => {
-    setUsername(text);
-  };
+    setUsername(text)
+  }
 
   const handlePasswordChange = (text) => {
-    setPassword(text);
-  };
+    setPassword(text)
+  }
 
   const handleEmailChange = (text) => {
-    setEmail(text);
-  };
+    setEmail(text)
+  }
 
   const handleRegistrationSubmit = () => {
-    setLoading(true);
+    setLoading(true)
     setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-  };
+      setLoading(false)
+    }, 2500)
+  }
   const handleLoginSubmit = () => {
-    setLoading(true);
+    setLoading(true)
     setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-  };
+      setLoading(false)
+    }, 2500)
+  }
 
   return typeOpen === "login" ? (
     <Login
@@ -57,5 +57,5 @@ export default function Authentication() {
       submit={handleRegistrationSubmit}
       loading={loading}
     />
-  );
+  )
 }
