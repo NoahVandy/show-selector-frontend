@@ -25,13 +25,17 @@ export default function Authentication() {
   }
 
   const handleRegistrationSubmit = () => {
-    if (validateEmail(email)) {
-      setLoading(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 2500)
+    if (!validateEmail(email)) {
+      console.error("invalid email")
+      return
     }
+
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500)
   }
+
   const handleLoginSubmit = () => {
     setLoading(true)
     setTimeout(() => {
