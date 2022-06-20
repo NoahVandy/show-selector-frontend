@@ -56,14 +56,11 @@
   padding: 10px;
   border-radius: 5px;
 }
-.loginBtn:hover {
-  background-color: grey;
-}
-.profileBtn {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-}
-.profileBtn:hover {
-  background-color: grey;
+
+.registrationTitleRow {
+  color: #4f1e10;
+  text-align: center;
+  width: 80%;
+  border-bottom: 1px solid #4f1e10;
+  font-size: 32px;
 }

@@ -35,21 +35,27 @@ const Header = () => {
       </Modal>
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.menuIcon}>
+          {/* <div className={styles.menuIcon}>
             <MenuIcon />
-          </div>
-          <h1>ethan is stupid.</h1>
+          </div> */}
+          <h1>show selector.</h1>
         </div>
         <div className={styles.right}>
+          <Link href="/tvshows">
+            <p className={styles.navButton}>tv shows.</p>
+          </Link>
           <p
+<<<<<<< Updated upstream
             className={authStyles.loginBtn}
+=======
+            className={styles.navButton}
+>>>>>>> Stashed changes
             onClickCapture={() => {
               setOpen(true);
             }}
           >
-            login/signup
+            login.
           </p>
-          <Link href="/profile">Profile Page</Link>
         </div>
       </div>
     </nav>
