@@ -1,13 +1,13 @@
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 
 export default function TvShows({ tvShows }) {
-  console.log(tvShows)
-  const router = useRouter()
+  console.log(tvShows);
+  const router = useRouter();
 
   return (
     <>
       {tvShows?.map((tvShow) => (
-        <div>
+        <div key={tvShow.id}>
           <h2 onClickCapture={() => router.push(`/tvshows/${tvShow.id}`)}>
             {tvShow.name}
           </h2>
@@ -15,5 +15,5 @@ export default function TvShows({ tvShows }) {
         </div>
       ))}
     </>
-  )
+  );
 }

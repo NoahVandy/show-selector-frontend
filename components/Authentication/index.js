@@ -37,13 +37,17 @@ export default function Authentication() {
       password: password,
     }
 
-    if (validateEmail(email)) {
-      setLoading(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 2500)
+    if (!validateEmail(email)) {
+      console.error("invalid email")
+      return
     }
+
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500)
   }
+
   const handleLoginSubmit = () => {
     setLoading(true)
     setTimeout(() => {
