@@ -49,6 +49,7 @@ export default function Authentication() {
     }
     const { data } = await addUser({ variables: addUserData })
     console.log("data", data.AddUser.user)
+    // Update user coming from context Is updating the user correctly.
     updateUser({
       username: data?.AddUser.user.username,
       id: data?.AddUser.user._id,
@@ -56,6 +57,7 @@ export default function Authentication() {
 
     setLoading(true)
     setTimeout(() => {
+      // Have console log in timer and is still logging the previous user, not the one sent on submit.
       console.log("user", user)
       setLoading(false)
     }, 5000)
