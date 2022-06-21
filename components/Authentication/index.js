@@ -57,7 +57,7 @@ export default function Authentication() {
 
     setLoading(true)
     setTimeout(() => {
-      // Have console log in timer and is still logging the previous user, not the one sent on submit.
+      // Have console log in timer and is still logging the previous user, not the one POSTed on submit.
       console.log("user", user)
       setLoading(false)
     }, 5000)
