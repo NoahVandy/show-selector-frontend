@@ -32,7 +32,7 @@ export default function Authentication() {
   }
 
   const handleRegistrationSubmit = async () => {
-    const addUserResponse = {
+    const addUserData = {
       username: username,
       email: email,
       password: password,
@@ -42,15 +42,21 @@ export default function Authentication() {
       console.error("invalid email")
       return
     }
-    const { data } = await addUser({ variables: addUserResponse })
-    console.log(data)
+    const { data } = await addUser({ variables: addUserData })
+
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 2500)
   }
 
-  const handleLoginSubmit = () => {
+  const handleLoginSubmit = async () => {
+    const loginUserData = {
+      username: username,
+      password: password,
+    }
+    const { data, errors } = await loginUser({ variables: loginUserData })
+
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
