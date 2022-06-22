@@ -4,6 +4,8 @@ import axios from "axios"
 import urls from "../../config/urls"
 import api_keys from "../../config/api_keys"
 
+import Button from "../../components/UI/Button"
+
 export async function getServerSideProps(context) {
   const tvShow_id = context.params.tvShow_id
 
@@ -29,6 +31,7 @@ export default function TvShowDetails({ tvShow_id }) {
     <div>
       <img src={`https://image.tmdb.org/t/p/w500/${tvShow.poster_path}`} />
       {tvShow.name}
+      {/* <Button onClick={saveShow}>Click me!</Button> */}
     </div>
   )
 }

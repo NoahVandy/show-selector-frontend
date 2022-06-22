@@ -1,8 +1,10 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
+
+import Button from "../../components/UI/Button"
 
 export default function TvShows({ tvShows }) {
-  console.log(tvShows);
-  const router = useRouter();
+  console.log(tvShows)
+  const router = useRouter()
 
   return (
     <>
@@ -12,8 +14,9 @@ export default function TvShows({ tvShows }) {
             {tvShow.name}
           </h2>
           <p>{tvShow.overview}</p>
+          {/* <Button onClick={saveShow}>Click me!</Button> */}
         </div>
       ))}
     </>
-  );
+  )
 }
