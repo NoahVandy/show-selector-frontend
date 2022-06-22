@@ -1,6 +1,8 @@
 import "../styles/globals.css"
 import Layout from "../components/Layout"
 
+import { UserContextDiv } from "../components/context/UserContext.js"
+
 import {
   ApolloProvider,
   ApolloClient,
@@ -16,9 +18,11 @@ const client = new ApolloClient({
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <UserContextDiv>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </UserContextDiv>
     </ApolloProvider>
   )
 }

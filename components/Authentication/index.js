@@ -9,6 +9,8 @@ import { ADD_USER, LOGIN_USER } from "../../graphQL/mutations"
 
 import { useMutation } from "@apollo/client"
 
+import { useUser, useUserUpdate } from "../context/UserContext"
+
 export default function Authentication() {
   const [typeOpen, setTypeOpen] = useState("registration")
   const [email, setEmail] = useState("")
@@ -18,6 +20,9 @@ export default function Authentication() {
 
   const [addUser] = useMutation(ADD_USER)
   const [loginUser] = useMutation(LOGIN_USER)
+
+  const updateUser = useUserUpdate()
+  const user = useUser()
 
   const handleUsernameChange = (text) => {
     setUsername(text)
@@ -32,6 +37,7 @@ export default function Authentication() {
   }
 
   const handleRegistrationSubmit = async () => {
+    setLoading(true)
     const addUserData = {
       username: username,
       email: email,
@@ -44,10 +50,12 @@ export default function Authentication() {
     }
     const { data } = await addUser({ variables: addUserData })
 
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 2500)
+    // Update user coming from context Is updating the user correctly.
+    updateUser({
+      username: data?.AddUser.user.username,
+      id: data?.AddUser.user._id,
+    })
+    setLoading(false)
   }
 
   const handleLoginSubmit = async () => {
