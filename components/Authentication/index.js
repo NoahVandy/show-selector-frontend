@@ -37,6 +37,7 @@ export default function Authentication() {
   }
 
   const handleRegistrationSubmit = async () => {
+    setLoading(true)
     const addUserData = {
       username: username,
       email: email,
@@ -48,18 +49,13 @@ export default function Authentication() {
       return
     }
     const { data } = await addUser({ variables: addUserData })
-    console.log("data", data.AddUser.user)
+
     // Update user coming from context Is updating the user correctly.
     updateUser({
       username: data?.AddUser.user.username,
       id: data?.AddUser.user._id,
     })
-
-    setLoading(true)
-    setTimeout(() => {
-      // Have console log in timer and is still logging the previous user, not the one POSTed on submit.
-      setLoading(false)
-    }, 5000)
+    setLoading(false)
   }
 
   const handleLoginSubmit = async () => {

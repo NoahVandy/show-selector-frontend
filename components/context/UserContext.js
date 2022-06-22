@@ -12,10 +12,8 @@ export function useUserUpdate() {
 }
 
 export function UserContextDiv({ children }) {
-  const [user, setUser] = useState({
-    username: "",
-    _id: "",
-  })
+  const [user, setUser] = useState({})
+
   return (
     <UserContext.Provider value={user}>
       <UpdateUserContext.Provider value={setUser}>
