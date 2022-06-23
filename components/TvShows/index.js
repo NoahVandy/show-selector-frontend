@@ -1,8 +1,7 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 
 export default function TvShows({ tvShows }) {
-  console.log(tvShows);
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
@@ -15,5 +14,5 @@ export default function TvShows({ tvShows }) {
         </div>
       ))}
     </>
-  );
+  )
 }

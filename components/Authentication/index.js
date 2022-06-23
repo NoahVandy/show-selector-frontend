@@ -59,16 +59,19 @@ export default function Authentication() {
   }
 
   const handleLoginSubmit = async () => {
+    setLoading(true)
     const loginUserData = {
       username: username,
       password: password,
     }
     const { data, errors } = await loginUser({ variables: loginUserData })
 
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 2500)
+    updateUser({
+      username: data?.login.user.username,
+      _id: data.login.user._id,
+    })
+
+    setLoading(false)
   }
 
   return typeOpen === "login" ? (
