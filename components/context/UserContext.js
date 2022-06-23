@@ -12,7 +12,7 @@ export function useUserUpdate() {
 }
 
 export function UserContextDiv({ children }) {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
 
   return (
     <UserContext.Provider value={user}>

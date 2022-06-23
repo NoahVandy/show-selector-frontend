@@ -9,11 +9,24 @@ import Modal from "@mui/material/Modal"
 
 import Authentication from "../../../Authentication"
 
+import { useUser, useUserUpdate } from "../../../context/UserContext"
+import { useRadioGroup } from "@mui/material"
+import { useRouter } from "next/router"
+import { Logout } from "@mui/icons-material"
+
 const Header = () => {
+  const user = useUser()
+  const updateUser = useUserUpdate()
+
   const [open, setOpen] = useState(false)
   const handleClose = (e) => {
     setOpen(false)
   }
+
+  const Logout = () => {
+    updateUser(null)
+  }
+
   return (
     <nav>
       <Modal
@@ -35,14 +48,30 @@ const Header = () => {
           <Link href="/tvshows">
             <p className={styles.navButton}>tv shows.</p>
           </Link>
-          <p
-            className={styles.navButton}
-            onClickCapture={() => {
-              setOpen(true)
-            }}
-          >
-            login.
-          </p>
+          {user && (
+            <Link href="/profile">
+              <p className={styles.navButton}> {user.username}</p>
+            </Link>
+          )}
+          {!user ? (
+            <p
+              className={styles.navButton}
+              onClickCapture={() => {
+                setOpen(true)
+              }}
+            >
+              Login
+            </p>
+          ) : (
+            <p
+              className={styles.navButton}
+              onClickCapture={() => {
+                Logout()
+              }}
+            >
+              Logout
+            </p>
+          )}
         </div>
       </div>
     </nav>
